@@ -1,0 +1,40 @@
+CREATE TABLE `documento` (
+  `idDocumento` int(11) NOT NULL,
+  `HayCedula` varchar(45) DEFAULT NULL,
+  `HayTituloB` varchar(45) DEFAULT NULL,
+  `HayFondoN` varchar(45) DEFAULT NULL,
+  `HayNotas` varchar(45) DEFAULT NULL,
+  `HayCartaOp` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idDocumento`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `edocivil` (
+  `idEdoCivil` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEdoCivil`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `estado` (
+  `idestado` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idestado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `estudiante` (
+  `idEstudiante` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) DEFAULT NULL,
+  `Apellido` varchar(45) DEFAULT NULL,
+  `Cedula` varchar(45) DEFAULT NULL,
+  `Sexo` varchar(45) DEFAULT NULL,
+  `idEdoCivil` int(11) DEFAULT NULL,
+  `idEstado` int(11) DEFAULT NULL,
+  `idDoc` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idEstudiante`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `usuario` (
+  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
